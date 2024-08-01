@@ -1,16 +1,8 @@
 import { defineUserConfig } from "vuepress";
-
-import theme from "./theme.js";
+import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
-  base: "/",
-
-  lang: "zh-CN",
-  title: "文档演示",
-  description: "vuepress-theme-hope 的文档演示",
-
-  theme,
-
-  // 和 PWA 一起启用
-  // shouldPrefetch: false,
+  theme: hopeTheme({
+    // 此处放置主题配置
+  }),
 });
