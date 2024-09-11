@@ -1,4 +1,7 @@
 import {
+  setupDevtoolsPlugin
+} from "./chunk-QYQIBODO.js";
+import {
   computed,
   defineComponent,
   getCurrentInstance,
@@ -16,15 +19,17 @@ import {
   unref,
   watch,
   watchEffect
-} from "./chunk-OHN7BBIE.js";
-import {
-  setupDevtoolsPlugin
-} from "./chunk-D2YVLGJ5.js";
+} from "./chunk-MEST6N4Q.js";
 
-// node_modules/.pnpm/vue-router@4.4.1_vue@3.4.35/node_modules/vue-router/dist/vue-router.mjs
+// node_modules/.pnpm/vue-router@4.4.4_vue@3.5.4/node_modules/vue-router/dist/vue-router.mjs
 var isBrowser = typeof document !== "undefined";
+function isRouteComponent(component) {
+  return typeof component === "object" || "displayName" in component || "props" in component || "__vccOpts" in component;
+}
 function isESModule(obj) {
-  return obj.__esModule || obj[Symbol.toStringTag] === "Module";
+  return obj.__esModule || obj[Symbol.toStringTag] === "Module" || // support CF with dynamic imports that do not
+  // add the Module string tag
+  obj.default && isRouteComponent(obj.default);
 }
 var assign = Object.assign;
 function applyToParams(fn, params) {
@@ -1135,6 +1140,7 @@ function normalizeRouteRecord(record) {
     leaveGuards: /* @__PURE__ */ new Set(),
     updateGuards: /* @__PURE__ */ new Set(),
     enterCallbacks: {},
+    mods: {},
     components: "components" in record ? record.components || null : record.component && { default: record.component }
   };
 }
@@ -1444,8 +1450,9 @@ function extractComponentsGuards(matched, guardType, to, from, runWithContext = 
         }
         guards.push(() => componentPromise.then((resolved) => {
           if (!resolved)
-            return Promise.reject(new Error(`Couldn't resolve component "${name}" at "${record.path}"`));
+            throw new Error(`Couldn't resolve component "${name}" at "${record.path}"`);
           const resolvedComponent = isESModule(resolved) ? resolved.default : resolved;
+          record.mods[name] = resolved;
           record.components[name] = resolvedComponent;
           const options = resolvedComponent.__vccOpts || resolvedComponent;
           const guard = options[guardType];
@@ -1456,9 +1463,6 @@ function extractComponentsGuards(matched, guardType, to, from, runWithContext = 
   }
   return guards;
 }
-function isRouteComponent(component) {
-  return typeof component === "object" || "displayName" in component || "props" in component || "__vccOpts" in component;
-}
 function loadRouteLocation(route) {
   return route.matched.every((record) => record.redirect) ? Promise.reject(new Error("Cannot load a route that redirects.")) : Promise.all(route.matched.map((record) => record.components && Promise.all(Object.keys(record.components).reduce((promises, name) => {
     const rawComponent = record.components[name];
@@ -1467,6 +1471,7 @@ function loadRouteLocation(route) {
         if (!resolved)
           return Promise.reject(new Error(`Couldn't resolve component "${name}" at "${record.path}". Ensure you passed a function that returns a promise.`));
         const resolvedComponent = isESModule(resolved) ? resolved.default : resolved;
+        record.mods[name] = resolved;
         record.components[name] = resolvedComponent;
         return;
       }));
@@ -2736,7 +2741,7 @@ export {
 
 vue-router/dist/vue-router.mjs:
   (*!
-    * vue-router v4.4.1
+    * vue-router v4.4.4
     * (c) 2024 Eduardo San Martin Morote
     * @license MIT
     *)
