@@ -1,3 +1,9 @@
 // you can change config here
 $colors: #c0392b, #d35400, #f39c12, #27ae60, #16a085, #2980b9, #8e44ad, #2c3e50,
   #7f8c8d !default;
+
+$pc: 1440px; // 电脑响应式布局断点，默认为 1440px
+$laptop: 1280px; // 笔记本响应式布局断点，默认为 1280px
+$pad: 959px; // 大型平板响应式布局断点，默认为 959px
+$tablet: 768px; // 平板响应式布局断点，默认为 768px
+$mobile: 480px; // 手机响应式布局断点，默认为 480px
