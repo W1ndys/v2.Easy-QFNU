@@ -1,6 +1,7 @@
 ---
-comments: true
-icon: material/cellphone-text
+dir:
+  order: 2
+  text: 校园卡篇
 ---
 
 # 校园卡

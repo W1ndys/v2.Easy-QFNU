@@ -1,5 +1,7 @@
 ---
-order: 1
+dir:
+  order: 1
+  text: 欢迎新生
 ---
 
 # 新生你好
