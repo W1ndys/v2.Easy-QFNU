@@ -6,19 +6,19 @@ import sidebar from "./sidebar.js";
 export default hopeTheme({
   hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
   author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
+    name: "W1ndys",
+    url: "https://github.com/W1ndys",
   },
   iconAssets: "fontawesome-with-brands",
   logo: "./ezqf.svg",
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "W1ndys/v2.Easy-QFNU",
   docsDir: "src",
   // 导航栏
   navbar,
   // 侧边栏
   sidebar,
   // 页脚
-  footer: "默认页脚",
+  footer: "Easy-QFNU，让你的QFNU更简单~",
   displayFooter: true,
   // 加密配置
   encrypt: {
@@ -31,7 +31,7 @@ export default hopeTheme({
     editLink: "在 GitHub 上编辑此页",
   },
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
-  // hotReload: true,
+  hotReload: true,
   // 在这里配置主题提供的插件
   plugins: {
     // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
