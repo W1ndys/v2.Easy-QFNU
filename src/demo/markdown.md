@@ -40,7 +40,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 ### 主题扩展
 
-通过 [`vuepress-plugin-md-enhance`][md-enhance]，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
+通过 VuePress 插件，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
 
 #### 选项卡
 
@@ -83,7 +83,7 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/tex.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/math.html)
 
 #### 任务列表
 
@@ -102,7 +102,7 @@ $$
 
 19^th^ H~2~O
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/sup-sub.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/sup-sub.html)
 
 #### 组件
 
@@ -318,8 +318,6 @@ npm i -D vuepress-theme-hope
 
 #### 幻灯片
 
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/revealjs.html" width="100%" height="400"/>
+<iframe src="https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/demo.html" width="100%" height="420"/>
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/content/revealjs.html)
-
-[md-enhance]: https://plugin-md-enhance.vuejs.press/zh/

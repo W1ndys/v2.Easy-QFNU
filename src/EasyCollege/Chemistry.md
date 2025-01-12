@@ -2,6 +2,10 @@
 title: 化学与化工学院
 comments: true
 icon: flask
+category:
+  - EasyCollege
+tag:
+  - 化学与化工学院
 ---
 
 # 化学与化工学院
