@@ -6,4 +6,5 @@ export default sidebar({
   "/EasyCourseSelection": "structure",
   "/EasyCollege/": "structure",
   "/Other/": "structure",
+  "/demo/": "structure",
 });
