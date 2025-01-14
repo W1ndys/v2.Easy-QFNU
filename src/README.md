@@ -11,13 +11,15 @@ heroText: Easy-QFNU
 tagline: Easy-QFNU，让你的QFNU更简单~
 
 actions:
-  - text: 使用指南
-    icon: lightbulb
-    link: ./demo/
+  - text: Github
+    icon: fa-brands fa-github
+    link: https://github.com/W1ndys/Easy-QFNU
     type: primary
 
-  - text: 文档
-    link: ./guide/
+  - text: 联系作者
+    icon: envelope
+    link: https://www.w1ndys.top
+    type: primary
 
 highlights:
   - header: 易于安装
