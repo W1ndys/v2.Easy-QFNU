@@ -1,6 +1,6 @@
 ---
 comments: true
-icon: material/handshake
+icon: heart
 title: 赞助计划
 ---
 
