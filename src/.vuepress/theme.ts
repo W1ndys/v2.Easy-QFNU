@@ -4,15 +4,15 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
-  darkmode: "auto",
+  hostname: "https://easy-qfnu.top",
+  darkmode: "switch",
   author: {
     name: "W1ndys",
     url: "https://github.com/W1ndys",
   },
 
   logo: "./ezqf.svg",
-  repo: "W1ndys/v2.Easy-QFNU",
+  repo: "W1ndys/Easy-QFNU",
   repoLabel: "GitHub",
   repoDisplay: true,
   docsDir: "src",
@@ -37,10 +37,6 @@ export default hopeTheme({
     center: ["Links"],
     end: ["Repo", "Outlook", "Search"],
   },
-  // 多语言配置
-  metaLocales: {
-    editLink: "在 GitHub 上编辑此页",
-  },
   // 打印
   print: true,
   // 全屏
@@ -58,7 +54,7 @@ export default hopeTheme({
     slimsearch: true,
     // 图标
     icon: {
-      assets: "iconify",
+      assets: "fontawesome",
     },
     // 评论
     comment: {
