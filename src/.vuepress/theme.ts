@@ -22,6 +22,8 @@ export default hopeTheme({
   sidebar,
   // 页脚
   footer: "Easy-QFNU，让你的QFNU更简单~",
+  copyright: "Copyright © 2024-2025 W1ndys",
+  license: "MIT",
   displayFooter: true,
   // 加密配置
   encrypt: {
@@ -44,11 +46,12 @@ export default hopeTheme({
   // 全屏
   fullscreen: true,
   // 是否开启沉浸模式
-  focus: true,
+  focus: false,
   // 是否开启纯净模式
-  pure: true,
+  pure: false,
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
   hotReload: true,
+
   // 在这里配置主题提供的插件
   plugins: {
     // 搜索
@@ -60,10 +63,10 @@ export default hopeTheme({
     // 评论
     comment: {
       provider: "Giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
-      category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
+      repo: "W1ndys/Easy-QFNU",
+      repoId: "R_kgDOLOtv9Q",
+      category: "Show and tell",
+      categoryId: "DIC_kwDOLOtv9c4Cd0Rh",
     },
     // 组件
     components: {
