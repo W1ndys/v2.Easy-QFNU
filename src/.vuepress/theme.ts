@@ -29,6 +29,12 @@ export default hopeTheme({
       "/demo/encrypt.html": ["1234"],
     },
   },
+  // 导航栏布局
+  navbarLayout: {
+    start: ["Brand"],
+    center: ["Links"],
+    end: ["Language", "Repo", "Outlook", "Search"],
+  },
   // 多语言配置
   metaLocales: {
     editLink: "在 GitHub 上编辑此页",
