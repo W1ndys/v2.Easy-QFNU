@@ -5,13 +5,16 @@ import sidebar from "./sidebar.js";
 
 export default hopeTheme({
   hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  darkmode: "auto",
   author: {
     name: "W1ndys",
     url: "https://github.com/W1ndys",
   },
-  iconAssets: "fontawesome-with-brands",
+
   logo: "./ezqf.svg",
   repo: "W1ndys/v2.Easy-QFNU",
+  repoLabel: "GitHub",
+  repoDisplay: true,
   docsDir: "src",
   // 导航栏
   navbar,
@@ -30,11 +33,25 @@ export default hopeTheme({
   metaLocales: {
     editLink: "在 GitHub 上编辑此页",
   },
+  // 打印
+  print: true,
+  // 全屏
+  fullscreen: true,
+  // 是否开启沉浸模式
+  focus: true,
+  // 是否开启纯净模式
+  pure: true,
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
   hotReload: true,
   // 在这里配置主题提供的插件
   plugins: {
-    // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
+    // 搜索
+    slimsearch: true,
+    // 图标
+    icon: {
+      assets: "iconify",
+    },
+    // 评论
     comment: {
       provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
@@ -42,9 +59,26 @@ export default hopeTheme({
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
+    // 组件
     components: {
       components: ["Badge", "VPCard"],
     },
+    // 返回顶部
+    backToTop: {
+      /**
+       * 显示返回顶部按钮的滚动阈值距离（以像素为单位）
+       *
+       * @default 100
+       */
+      threshold: 500,
+      /**
+       * 是否显示滚动进度
+       *
+       * @default true
+       */
+      progress: true,
+    },
+
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     mdEnhance: {
       align: true,
