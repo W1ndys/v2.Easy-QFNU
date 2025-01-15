@@ -47,7 +47,13 @@ export default hopeTheme({
   pure: false,
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
   hotReload: true,
-
+  // 主题Markdown选项
+  markdown: {
+    // 数学公式
+    math: {
+      type: "katex", // 或 'mathjax'
+    },
+  },
   // 在这里配置主题提供的插件
   plugins: {
     copyright: {
