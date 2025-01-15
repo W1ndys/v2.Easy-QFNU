@@ -12,10 +12,13 @@ export default hopeTheme({
   },
 
   logo: "./ezqf.svg",
+  docsRepo: "W1ndys/Easy-QFNU",
+  docsDir: "src",
+  docsBranch: "main",
   repo: "W1ndys/Easy-QFNU",
   repoLabel: "GitHub",
   repoDisplay: true,
-  docsDir: "src",
+
   // 导航栏
   navbar,
   // 侧边栏
@@ -132,12 +135,51 @@ export default hopeTheme({
   // 在这里配置主题提供的插件
 
   plugins: {
+    // 评论
+    comment: {
+      provider: "Waline",
+      serverURL: "https://comments.easy-qfnu.top",
+      pageview: true,
+      pageSize: 10,
+      // provider: "Giscus",
+      // repo: "W1ndys/Easy-QFNU",
+      // repoId: "R_kgDOLOtv9Q",
+      // category: "Show and tell",
+      // categoryId: "DIC_kwDOLOtv9c4Cd0Rh",
+    },
+    // 通知
+    notice: {
+      config: [
+        {
+          showOnce: true,
+          // fullscreen: true,
+          // confirm: true,
+          path: "/EasySelectCourse",
+          title: "解锁密码",
+          content: "解锁密码请关注微信公众号【W1ndys】获取",
+          actions: [
+            {
+              text: "点我去关注",
+              link: "https://pic1.zhimg.com/80/v2-a42b58d3c6fa27d3ebe03b7090a7cf63.jpeg",
+              type: "primary",
+            },
+            {
+              text: "联系作者",
+              link: "https://qm.qq.com/q/HlOWmsUlCQ",
+              type: "primary",
+            },
+          ],
+        },
+      ],
+    },
+    // 版权
     copyright: {
       global: true,
       disableCopy: false,
       disableSelection: false,
       triggerLength: 50,
     },
+    // 水印
     watermark: {
       enabled: true,
       watermarkOptions: {
@@ -150,14 +192,7 @@ export default hopeTheme({
     icon: {
       assets: "fontawesome",
     },
-    // 评论
-    comment: {
-      provider: "Giscus",
-      repo: "W1ndys/Easy-QFNU",
-      repoId: "R_kgDOLOtv9Q",
-      category: "Show and tell",
-      categoryId: "DIC_kwDOLOtv9c4Cd0Rh",
-    },
+
     // 组件
     components: {
       components: ["Badge", "VPCard"],
