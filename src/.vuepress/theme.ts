@@ -52,6 +52,7 @@ export default hopeTheme({
     // 数学公式
     math: {
       type: "mathjax", // 或 'mathjax'
+      output: "svg",
     },
   },
   // 在这里配置主题提供的插件
