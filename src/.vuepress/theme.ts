@@ -51,7 +51,7 @@ export default hopeTheme({
   markdown: {
     // 数学公式
     math: {
-      type: "katex", // 或 'mathjax'
+      type: "mathjax", // 或 'mathjax'
     },
   },
   // 在这里配置主题提供的插件
