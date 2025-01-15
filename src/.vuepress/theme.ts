@@ -50,6 +50,18 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
+    copyright: {
+      global: true,
+      disableCopy: false,
+      disableSelection: false,
+      triggerLength: 50,
+    },
+    watermark: {
+      enabled: true,
+      watermarkOptions: {
+        content: "Easy-QFNU | https://easy-qfnu.top",
+      },
+    },
     // 搜索
     slimsearch: true,
     // 图标
