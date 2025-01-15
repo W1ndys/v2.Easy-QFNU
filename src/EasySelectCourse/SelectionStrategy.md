@@ -1,5 +1,4 @@
 ---
-comments: true
 title: 选课攻略
 icon: fas fa-book
 ---
