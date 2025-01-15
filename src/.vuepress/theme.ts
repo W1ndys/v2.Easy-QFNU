@@ -54,8 +54,83 @@ export default hopeTheme({
       type: "mathjax", // 或 'mathjax'
       output: "svg",
     },
+    // 启用下角标
+    sub: true,
+    // 启用上角标
+    sup: true,
+    // 选项卡
+    tabs: true,
+    // 任务列表
+    tasklist: true,
+    // 代码块
+    vPre: true,
+    // 对齐
+    align: true,
+    // 属性
+    attrs: true,
+    // 代码块标签
+    codeTabs: true,
+    // 组件
+    component: true,
+    // 演示
+    demo: true,
+    // 图片
+    figure: true,
+    // 图片懒加载
+    imgLazyload: true,
+    // 图片大小
+    imgSize: true,
+    // 包含
+    include: true,
+    // 标记
+    mark: true,
+    // 流程图
+    plantuml: true,
+    // 隐藏
+    spoiler: true,
+    // 自定义样式
+    stylize: [
+      {
+        matcher: "Recommended",
+        replacer: ({ tag }) => {
+          if (tag === "em")
+            return {
+              tag: "Badge",
+              attrs: { type: "tip" },
+              content: "Recommended",
+            };
+        },
+      },
+    ],
+    // 在启用之前安装 chart.js
+    // chart: true,
+    // insert component easily
+    // 在启用之前安装 echarts
+    // echarts: true,
+    // 在启用之前安装 flowchart.ts
+    // flowchart: true,
+    // gfm requires mathjax-full to provide tex support
+    // gfm: true,
+    // 在启用之前安装 katex
+    // katex: true,
+    // 在启用之前安装 mathjax-full
+    // mathjax: true,
+    // 在启用之前安装 mermaid
+    // mermaid: true,
+    // playground: {
+    //   presets: ["ts", "vue"],
+    // },
+    // 在启用之前安装 reveal.js
+    // revealJs: {
+    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
+    // },
+    // 在启用之前安装 @vue/repl
+    // vuePlayground: true,
+    // install sandpack-vue3 before enabling it
+    // sandpack: true,
   },
   // 在这里配置主题提供的插件
+
   plugins: {
     copyright: {
       global: true,
@@ -101,78 +176,6 @@ export default hopeTheme({
        * @default true
        */
       progress: true,
-    },
-
-    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
-    mdEnhance: {
-      align: true,
-      attrs: true,
-      codetabs: true,
-      component: true,
-      demo: true,
-      figure: true,
-      imgLazyload: true,
-      imgSize: true,
-      include: true,
-      mark: true,
-      plantuml: true,
-      spoiler: true,
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tabs: true,
-      tasklist: true,
-      vPre: true,
-
-      // 在启用之前安装 chart.js
-      // chart: true,
-
-      // insert component easily
-
-      // 在启用之前安装 echarts
-      // echarts: true,
-
-      // 在启用之前安装 flowchart.ts
-      // flowchart: true,
-
-      // gfm requires mathjax-full to provide tex support
-      // gfm: true,
-
-      // 在启用之前安装 katex
-      // katex: true,
-
-      // 在启用之前安装 mathjax-full
-      // mathjax: true,
-
-      // 在启用之前安装 mermaid
-      // mermaid: true,
-
-      // playground: {
-      //   presets: ["ts", "vue"],
-      // },
-
-      // 在启用之前安装 reveal.js
-      // revealJs: {
-      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-      // },
-
-      // 在启用之前安装 @vue/repl
-      // vuePlayground: true,
-
-      // install sandpack-vue3 before enabling it
-      // sandpack: true,
     },
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
