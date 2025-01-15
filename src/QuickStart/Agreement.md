@@ -49,4 +49,4 @@ title: 声明与用户协议
 
 赞助者将在本站公示，并接受作者的监督。
 
-如果你想参与赞助，请前往：[赞助](/QuickStart/Sponsor/)
+如果你想参与赞助，请前往：[赞助](/QuickStart/Sponsor)
