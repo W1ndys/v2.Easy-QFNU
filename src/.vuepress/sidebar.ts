@@ -3,7 +3,7 @@ import { sidebar } from "vuepress-theme-hope";
 export default sidebar({
   "/QuickStart/": "structure",
   "/EasySchool/": "structure",
-  "/EasyCourseSelection": "structure",
+  "/EasySelectCourse": "structure",
   "/EasyCollege/": "structure",
   "/Other/": "structure",
   "/demo/": "structure",
