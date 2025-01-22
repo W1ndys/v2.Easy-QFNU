@@ -40,7 +40,7 @@ jobs:
         cd deploy
         git checkout dist || git checkout -b dist
         git rm -rf .
-        cp -r ../src/.dist/* .
+        cp -r src/.dist/* .
         git add -A
         git commit -m "Deploy generated pages"
         git push origin dist
