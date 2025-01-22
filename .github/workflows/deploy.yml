@@ -32,15 +32,15 @@ jobs:
         chmod +x ./build.sh
         sh build.sh
 
-    - name: Deploy to dist branch
+    - name: Deploy to gh-pages branch
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git clone --single-branch --branch dist https://github.com/${{ github.repository }} deploy || git clone --single-branch https://github.com/${{ github.repository }} deploy
-        ls
-        cd dist
-        git checkout dist || git checkout -b dist
-        cp -r src/.vuepress/dist .
+        git clone --single-branch --branch gh-pages https://github.com/${{ github.repository }} deploy || git clone --single-branch https://github.com/${{ github.repository }} deploy
+        cd deploy
+        git checkout gh-pages || git checkout -b gh-pages
+        rm -rf *
+        cp -r ../src/.vuepress/dist/* .
         git add -A
         git commit -m "Deploy generated pages"
-        git push origin dist
+        git push origin gh-pages
