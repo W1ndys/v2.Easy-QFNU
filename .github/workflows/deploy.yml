@@ -22,7 +22,7 @@ jobs:
     - name: Run build script
       run: |
         chmod +x ./build.sh
-        ./build.sh
+        sh ./build.sh
 
     - name: Deploy to dist branch
       run: |
