@@ -31,16 +31,15 @@ jobs:
       run: |
         chmod +x ./build.sh
         sh build.sh
-        ls
 
     - name: Deploy to dist branch
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git clone --single-branch --branch dist https://github.com/${{ github.repository }} deploy
+        git clone --single-branch --branch dist https://github.com/${{ github.repository }} deploy || git clone --single-branch https://github.com/${{ github.repository }} deploy && cd deploy && git checkout -b dist
         cd deploy
         rm -rf *
-        cp -r ../dist/* .
+        cp -r ../src/.dist/* .
         git add -A
         git commit -m "Deploy generated pages"
         git push origin dist
