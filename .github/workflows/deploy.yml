@@ -23,9 +23,12 @@ jobs:
       with:
         node-version: '18.12'
 
-    - name: Run build script
+    - name: Install dependencies
       run: |
         pnpm i
+
+    - name: Run build script
+      run: |
         chmod +x ./build.sh
         sh build.sh
 
