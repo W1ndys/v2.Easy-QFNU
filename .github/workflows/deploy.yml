@@ -31,7 +31,7 @@ jobs:
       run: |
         chmod +x ./build.sh
         sh build.sh
-        ls -l
+        ls -R
 
     - name: Deploy to dist branch
       run: |
