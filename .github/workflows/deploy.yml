@@ -33,10 +33,12 @@ jobs:
         sh build.sh
 
     - name: Deploy to gh-pages branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git clone --single-branch --branch gh-pages https://github.com/${{ github.repository }} deploy || git clone --single-branch https://github.com/${{ github.repository }} deploy
+        git clone --single-branch --branch gh-pages https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} deploy || git clone --single-branch https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} deploy
         cd deploy
         git checkout gh-pages || git checkout -b gh-pages
         rm -rf *
