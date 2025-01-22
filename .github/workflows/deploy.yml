@@ -36,9 +36,10 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git clone --single-branch --branch dist https://github.com/${{ github.repository }} deploy || git clone --single-branch https://github.com/${{ github.repository }} deploy && cd deploy && git checkout -b dist
+        git clone --single-branch --branch dist https://github.com/${{ github.repository }} deploy || git clone --single-branch https://github.com/${{ github.repository }} deploy
         cd deploy
-        rm -rf *
+        git checkout dist || git checkout -b dist
+        git rm -rf .
         cp -r ../src/.dist/* .
         git add -A
         git commit -m "Deploy generated pages"
