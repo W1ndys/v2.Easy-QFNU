@@ -57,6 +57,8 @@ export default hopeTheme({
       type: "mathjax", // 或 'mathjax'
       output: "svg",
     },
+    // 启用脚注
+    footnote: true,
     // 启用下角标
     sub: true,
     // 启用上角标
@@ -183,7 +185,7 @@ export default hopeTheme({
     watermark: {
       enabled: true,
       watermarkOptions: {
-        content: "Easy-QFNU | https://easy-qfnu.top",
+        content: "微信公众号：W1ndys",
       },
     },
     // 搜索
