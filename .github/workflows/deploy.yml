@@ -1,49 +1,39 @@
-name: 部署文档
+name: Deploy Pages
 
 on:
   push:
-    branches:
-      # 确保这是你正在使用的分支
-      - main
-  # 添加手动触发支持
+    branches: [ main ] # 或者你的默认分支名
   workflow_dispatch:
 
 jobs:
-  deploy-gh-pages:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 添加写入权限
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # 获取完整的 git 历史
           
-      - name: 安装 pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false
-
-      - name: 设置 Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          # 更新到更新的 Node.js 版本
-          node-version: 18
-          cache: pnpm
-
-      - name: 安装依赖
-        run: |
-          pnpm config set registry https://registry.npmmirror.com/
-          pnpm install --no-frozen-lockfile
-
-      - name: 构建文档
-        env:
-          NODE_OPTIONS: --max_old_space_size=4096
-        run: pnpm run docs:build
-
-      - name: 部署文档
+          node-version: '18'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          
+      - name: Install Dependencies
+        run: pnpm install
+        
+      - name: Build
+        run: pnpm run docs:build # 或者你的构建命令
+        
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # 这是文档部署到的分支名称
+          folder: docs/.vitepress/dist # 你的构建输出目录
           branch: gh-pages
-          # 这是打包后的文件路径
-          folder: src/.vuepress/dist
+          token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 提供的 token
