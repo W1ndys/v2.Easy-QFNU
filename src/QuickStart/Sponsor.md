@@ -1,5 +1,4 @@
 ---
-comments: true
 title: 赞助计划
 ---
 
