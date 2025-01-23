@@ -26,14 +26,20 @@ jobs:
           version: latest
           
       - name: Install Dependencies
-        run: pnpm install
+        run: |
+          pnpm config set registry https://registry.npmmirror.com/
+          pnpm install
         
       - name: Build
-        run: pnpm run docs:build # 或者你的构建命令
+        run: |
+          pnpm run docs:build
+          ls -la # 检查构建输出目录
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: docs/.vitepress/dist # 你的构建输出目录
+          folder: src/.vuepress/dist  # 修改为正确的构建输出目录
           branch: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 提供的 token
+          clean: true
+          force: true
