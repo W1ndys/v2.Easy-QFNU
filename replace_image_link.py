@@ -61,5 +61,5 @@ def update_markdown_images(md_file_path):
 
 
 # 使用示例
-markdown_file_path = "src/EasySelectCourse/SelectionGuide/Criticism.md"
+markdown_file_path = "src/EasySelectCourse/SelectionGuide/PublicElective.md"
 update_markdown_images(markdown_file_path)
