@@ -1,6 +1,5 @@
 ---
 title: 选课指北
-icon: fas fa-book
 ---
 
 # 选课指北

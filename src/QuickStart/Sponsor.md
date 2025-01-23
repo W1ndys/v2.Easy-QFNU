@@ -1,6 +1,5 @@
 ---
 comments: true
-icon: heart
 title: 赞助计划
 ---
 

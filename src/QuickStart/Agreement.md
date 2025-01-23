@@ -1,5 +1,4 @@
 ---
-icon: fa-regular fa-note-sticky
 title: 声明与用户协议
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: 选课攻略
-icon: fas fa-book
 ---
 
 # 选课攻略

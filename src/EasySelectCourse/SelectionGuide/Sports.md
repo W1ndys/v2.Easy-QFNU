@@ -1,6 +1,5 @@
 ---
 title: 体育课
-icon: fas fa-running
 ---
 
 # 体育课

@@ -1,7 +1,6 @@
 ---
 title: 快速开始
 author: W1ndys,zhf
-icon: fa-solid fa-rocket
 ---
 
 <!--
