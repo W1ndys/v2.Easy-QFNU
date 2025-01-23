@@ -26,11 +26,14 @@ jobs:
       - name: 设置 Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          # 更新到更新的 Node.js 版本
+          node-version: 18
           cache: pnpm
 
       - name: 安装依赖
-        run: pnpm install
+        run: |
+          pnpm config set registry https://registry.npmmirror.com/
+          pnpm install --no-frozen-lockfile
 
       - name: 构建文档
         env:
