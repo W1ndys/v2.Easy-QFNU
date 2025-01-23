@@ -3,6 +3,8 @@
 # 设置工作目录
 WORK_DIR="/tmp/v2easy-temp"
 TARGET_DIR="/opt/1panel/apps/openresty/openresty/www/sites/v2easy-qfnu.top/index"
+REPO_URL="https://github.com/W1ndys/v2.Easy-QFNU.git"
+PROXY_URL="https://ghfast.top/https://github.com/W1ndys/v2.Easy-QFNU.git"
 
 # 清理可能存在的旧临时目录
 rm -rf "$WORK_DIR"
@@ -13,9 +15,26 @@ mkdir -p "$WORK_DIR"
 # 进入工作目录
 cd "$WORK_DIR" || exit 1
 
-# 浅克隆指定分支
-echo "正在克隆仓库..."
-git clone --depth 1 --branch gh-pages https://github.com/W1ndys/v2.Easy-QFNU.git .
+# 克隆函数
+clone_repo() {
+    local url=$1
+    echo "正在尝试克隆仓库: $url"
+    git clone --depth 1 --branch gh-pages "$url" . &> /dev/null
+    return $?
+}
+
+# 先尝试直接克隆
+echo "正在使用直接连接克隆..."
+if ! clone_repo "$REPO_URL"; then
+    echo "直接克隆失败，尝试使用代理..."
+    if ! clone_repo "$PROXY_URL"; then
+        echo "克隆失败，请检查网络连接或代理设置"
+        exit 1
+    fi
+    echo "使用代理克隆成功"
+else
+    echo "直接克隆成功"
+fi
 
 # 确保目标目录存在
 mkdir -p "$TARGET_DIR"
